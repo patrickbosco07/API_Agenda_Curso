@@ -1,0 +1,35 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Professores</title>
+</head>
+
+<body>
+<h1> Professores</h1>
+<p><a th:href="@{/professor/criar}">Novo</a></p>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+        <th></th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${professores}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nome}"></td>
+        <td th:text="${p.sobrenome}"></td>
+        <td>
+            <a th:href="@{/professor/{id}(id=${p.id})}">Visualizar</a>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+<br>
+</body>
+
+</html>

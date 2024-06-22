@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+  <title>Editar Professor</title>
+</head>
+
+<body>
+<h1>Editar Professor</h1>
+<p><a th:href="@{/}">Início</a>/<a th:href="@{/professor}">Professor</a>/<span th:text="*{entidade.id}"></span></p>
+<br>
+<form th:action="@{/professor/atualizar}" th:object="${entidade}" method="post">
+  <label for="id">ID</label>
+  <div class="">
+    <input id="id" type="text" placeholder="id"   readonly  th:field="*{id}">
+  </div>
+  <label for="nome">Nome</label>
+  <div class="">
+    <input id="nome" type="text" placeholder="nome"    th:field="*{nome}">
+  </div>
+  <label for="sobrenome">Sobrenome</label>
+  <div class="">
+    <input id="sobrenome" type="text" placeholder="sobrenome"  th:field="*{sobrenome}">
+  </div>
+  <div >
+    <button type="submit" id="btn">Salvar</button>
+  </div>
+  <br>
+  <p th:text="${erro}"></p>
+</form>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Professor</title>
+</head>
+
+<body>
+<h1> Professor</h1>
+<p><a th:href="@{/}">Início</a>/<a th:href="@{/professor}">Professor</a>/<span th:text="*{entidade.id}"></span></p>
+<br>
+<label for="id">ID</label>
+<div class="">
+    <input id="id" type="text" placeholder="id"  disabled readonly  th:field="*{entidade.id}">
+</div>
+<label for="nome">Nome</label>
+<div class="">
+    <input id="nome" type="text" placeholder="id"  disabled readonly  th:field="*{entidade.nome}">
+</div>
+<label for="sobrenome">Sobrenome</label>
+<div class="">
+    <input id="sobrenome" type="text" placeholder="id"  disabled readonly  th:field="*{entidade.sobrenome}">
+</div>
+<div class="mt-8 flex flex-row">
+    <a th:href="@{/professor/{id}/editar(id=${entidade.id})}">Editar</a>
+</div>
+</body>
+</html>

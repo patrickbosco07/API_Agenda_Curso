@@ -1,0 +1,30 @@
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>Professores</title>
+</head>
+
+<body>
+<h1> Professores</h1>
+<p>Objeto vindo do controller: <span th:text="${objeto}"></span></p>
+<br>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>Sobrenome</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="p : ${professores}">
+        <td th:text="${p.id}"></td>
+        <td th:text="${p.nome}"></td>
+        <td th:text="${p.sobrenome}"></td>
+    </tr>
+    </tbody>
+</table>
+<br>
+</body>
+
+</html>
